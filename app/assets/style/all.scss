@@ -1,23 +1,20 @@
-$color: #00cc99;
+@import "helpers/variables";
+@import "helpers/mixin";
+@import "helpers/reset";
+@import "base/base";
+@import "util";
 
-.header {
-  height: 200px;
-  background-color: #00cc99;
-}
+@import "components/pagination";
+@import "components/products";
 
-.footer {
-  height: 200px;
-  background-color: #00cc99;
-}
+@import "layout/header";
+@import "layout/footer";
 
-.box {
-  width: 100px;
-  height: 100px;
-  background-color: red;
-  display: flex;
-  transition: all 0.5s;
-  &:hover {
-    width: 200px;
-    background-color: $color;
-  }
-}
+@import "pages/index";
+@import "pages/store";
+@import "pages/map";
+@import "pages/optical";
+@import "pages/sunglasses";
+@import "pages/faq";
+@import "pages/blog";
+@import "pages/posts";

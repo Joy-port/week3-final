@@ -1,0 +1,35 @@
+/* variables */
+/* color */
+$white: #fff;
+$lightPink: #fbf2f2;
+$orange: #b75929;
+$mainRed: #aa0601;
+
+$darkRed: #650300;
+
+$black: #000;
+$mainBlack: #111619;
+$grayBlack:#212529;
+$gray-700: #0A0A0A;
+$gray-500:#555555;
+$gray-400: #6C6C6C;
+$gray-300: #707070; /* gray */
+$lightGray:#DCDCDC;
+
+/* spacer 參考用 */
+$spacer: 1rem;
+$spacers: (
+  0: 0,
+  1: $spacer / 4,
+  2: $spacer / 2,
+  3: $spacer,
+  4: $spacer * 1.25,
+  /* 20 */ 5: $spacer * 1.5,
+  /* 24 */ 6: $spacer * 1.875,
+  /* 30 */ 7: $spacer * 2,
+  /* 32 */ 8: $spacer * 2.25,
+  /* 36 */ 9: $spacer * 2.5,
+  /* 40 */ 10: $spacer * 3,
+  /* 48 */ 11: $spacer * 3.75,
+  /* 60 */ 12: $spacer * 4 /* 64 */,
+);
