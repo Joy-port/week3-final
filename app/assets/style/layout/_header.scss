@@ -4,8 +4,9 @@
     justify-content: space-between;
     align-items: center;
   
-    padding: 30px 15px;
+    padding: 30px 88px;
   
+    /* 加入才不會有空白區塊 */
     @include pad {
       margin-left: -15px;
       margin-right: -15px;
@@ -13,15 +14,13 @@
   
     @include mobile {
       flex-direction: column;
-      justify-content: flex-start;
-      padding-top: 0;
-      padding-bottom: 0;
+      padding: 0 15px;
     }
   }
   
   .logo {
     @include mobile {
-      padding: 10px 164px;
+      padding: 10px 0;
     }
   
     a {
@@ -52,10 +51,9 @@
   
     @include mobile {
       flex-wrap: wrap;
-  
-      border: 1px solid $white;
-      border-bottom: 0;
+      max-width: 100%;
     }
+
   
     li {
       @include mobile {
@@ -66,7 +64,6 @@
   
     a {
       display: block;
-  
       font-size: 1.25rem;
   
       &:hover {

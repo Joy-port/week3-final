@@ -201,28 +201,28 @@ current: index
       <h3 class="title fw-bold">聯絡我們</h3>
       <p >我們相當重視您的意見，若您有任何疑問，可先參考「常見問題」，若仍有任何問題，請填妥以下資料，我們會在近期與您聯繫。</p>
       <form action="#">
-        <ul class="contact__list">
-          <li>
+        <div class="contact__list">
+          <div class="contact__content">
             <label class="contact__label" for="name">姓名</label>
             <input type="name" class="contact__input" name="name" id="name" placeholder="陳小明">
-          </li>
-          <li>
+          </div>
+          <div class="contact__content">
             <label class="contact__label" for="tel">聯絡電話</label>
             <input type="tel" class="contact__input" name="tel" id="tel" placeholder="0912-345-678">
-          </li>
-          <li>
+          </div>
+          <div class="contact__content">
             <label class="contact__label" for="email">電子郵件</label>
             <input type="email" class="contact__input" name="email" id="email" placeholder="example@email.com">
-          </li>
-          <li>
+          </div>
+          <div class="contact__content">
             <label class="contact__label" for="comment">意見反應</label>
             <textarea class="contact__input form__comment" name="comment" id="comment"  rows="10" cols="30" placeholder="請輸入您的意見" ></textarea>
-          </li>
-          <li class="contact__agreement">
+          </div>
+          <div class="contact__agreement">
             <input type="checkbox" name="agreement" id="agreement">
             <label for="agreement">我同意隱私權政策，並同意依隱私權政策中所述的方式處理自己的資料。</label>
-          </li>
-        </ul>
+          </div>
+        </div>
         <button type="submit" class="form__submit">確認送出</button>
         
       </form>
