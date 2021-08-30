@@ -1,56 +1,53 @@
-.faq{
-    &__title{
-        margin-top: 3.75rem;
-        font-size: 2rem;
+.faq {
+  &__title {
+    margin-top: 3.75rem;
+    font-size: 2rem;
 
-        @include pad{
-            margin-top: 2.5rem;
-        }
-
-        @include mobile{
-            margin-top: 1.5rem;
-            font-weight: normal;
-            font-size: 1.5rem;
-        }
+    @include pad {
+      margin-top: 2.5rem;
     }
 
-    &__list{
-        margin-top: 2.25rem;
-        @include pad{
-            margin-top: 2rem;
-        }
-
-        @include mobile{
-            margin-top: 1.5rem;
-        }
+    @include mobile {
+      margin-top: 1.5rem;
+      font-weight: normal;
+      font-size: 1.5rem;
     }
-    
-    &__content{
+  }
 
-        h4{
-            font-size: 1.25rem;
-            margin-bottom: 1rem;
-
-            @include mobile{
-                font-size: 1rem;
-                margin-bottom: 0.5rem;
-            }
-        }
-
-        p{
-            margin-bottom: 2rem;
-            padding-left: 8.5%;
-
-            @include pad{
-                margin-bottom: 1.5rem;
-            }
-            @include mobile{
-                margin-bottom: 1.25rem;
-                font-size: 0.875rem;
-                padding-left: 0;
-            }
-
-        }
+  &__list {
+    margin-top: 2.25rem;
+    @include pad {
+      margin-top: 2rem;
     }
 
+    @include mobile {
+      margin-top: 1.5rem;
+    }
+  }
+
+  &__content {
+    h4 {
+      font-size: 1.25rem;
+      margin-bottom: 1rem;
+
+      @include mobile {
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+      }
+    }
+
+    p {
+      margin-bottom: 2rem;
+      padding-left: 8.5%;
+
+      @include pad {
+        margin-bottom: 1.5rem;
+      }
+      @include mobile {
+        margin-bottom: 1.25rem;
+        font-size: 0.875rem;
+        padding-left: 0;
+      }
+    }
+  }
 }
