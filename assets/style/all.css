@@ -334,10 +334,11 @@ a:hover {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    height: 96px;
     color: #000;
     font-size: 2rem;
-    font-weight: 600; }
+    font-weight: 600;
+    padding-top: 2.25rem;
+    padding-bottom: 2.25rem; }
     .product__menu a:hover {
       border-bottom: 4px solid #aa0601;
       padding-bottom: -4px; }
@@ -441,7 +442,7 @@ a:hover {
   @media (max-width: 767px) {
     .product__price {
       font-size: 1rem; } }
-  .product__price span {
+  .product__price p {
     color: #aa0601;
     font-weight: 600; }
 
@@ -480,7 +481,8 @@ a:hover {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 30px 15px; }
+  padding: 30px 88px;
+  /* 加入才不會有空白區塊 */ }
   @media (max-width: 992px) {
     .header {
       margin-left: -15px;
@@ -491,15 +493,11 @@ a:hover {
       -webkit-box-direction: normal;
           -ms-flex-direction: column;
               flex-direction: column;
-      -webkit-box-pack: start;
-          -ms-flex-pack: start;
-              justify-content: flex-start;
-      padding-top: 0;
-      padding-bottom: 0; } }
+      padding: 0 15px; } }
 
 @media (max-width: 767px) {
   .logo {
-    padding: 10px 164px; } }
+    padding: 10px 0; } }
 
 .logo a {
   display: block;
@@ -528,8 +526,7 @@ a:hover {
     .menu {
       -ms-flex-wrap: wrap;
           flex-wrap: wrap;
-      border: 1px solid #fff;
-      border-bottom: 0; } }
+      max-width: 100%; } }
   @media (max-width: 767px) {
     .menu li {
       width: 50%;
@@ -747,22 +744,22 @@ a:hover {
           flex-wrap: wrap; } }
 
 .service__card {
-  max-width: 255px;
-  /*255*/
+  max-width: 30%;
+  /*255 -> %*/
   margin: 0 auto;
   text-align: center;
   /*未載入font awesome cdn 無法改粗細 -> 發現是link順序問題，已調整*/ }
   @media (max-width: 992px) {
     .service__card {
-      max-width: 330px;
-      /*255->330*/
+      max-width: 47.8%;
+      /*255->330 -> %*/
       padding-left: 45px;
       padding-right: 45px;
       margin-bottom: 2rem; } }
   @media (max-width: 767px) {
     .service__card {
       max-width: 100%;
-      /*255-345*/ } }
+      /*255-345 -> %*/ } }
   .service__card img {
     width: 83px;
     height: 83px; }
@@ -918,9 +915,6 @@ a:hover {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  -webkit-box-align: stretch;
-      -ms-flex-align: stretch;
-          align-items: stretch;
   /* 希望下方文字區塊可以自適應延伸，但是好像沒有效果，想知道要怎麼設定，不用外加padding 讓留言區塊自己根據高度統一延長 */ }
   @media (max-width: 992px) {
     .recommend__list {
@@ -939,7 +933,7 @@ a:hover {
           flex-direction: column; }
   @media (max-width: 992px) {
     .recommend__card {
-      width: 47%; } }
+      width: 47.8%; } }
   @media (max-width: 767px) {
     .recommend__card {
       width: 100%;
@@ -976,6 +970,14 @@ a:hover {
   background-image: url(https://github.com/hexschool/webLayoutTraining1st/blob/master/week3/rec-4.png?raw=true); }
 
 .card__content {
+  /* 使用flex 產生stretch 留白 */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   padding: 1rem;
   border-bottom-right-radius: 4px;
   border-bottom-left-radius: 4px;
@@ -989,7 +991,11 @@ a:hover {
   /* succeed */ }
   .card__content p {
     color: #212529;
-    margin-bottom: 8px; }
+    margin-bottom: 8px;
+    /* 讓內容自適應延伸 父 flex 子 grow  succeed*/
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1; }
   .card__content time {
     color: #707070;
     font-size: 0.875rem; }
@@ -1002,7 +1008,7 @@ form {
   text-align: center; }
 
 .contact {
-  max-width: 730px; }
+  max-width: 66.66%; }
   .contact p {
     margin-bottom: 1.25rem;
     font-size: 1.25rem; }
@@ -1019,11 +1025,11 @@ form {
     @media (max-width: 992px) {
       .contact__list {
         margin-bottom: 1.25rem; } }
-    .contact__list li {
-      margin-bottom: 1rem; }
-      @media (max-width: 992px) {
-        .contact__list li {
-          margin-bottom: 0.5rem; } }
+  .contact__content {
+    margin-bottom: 1rem; }
+    @media (max-width: 992px) {
+      .contact__content {
+        margin-bottom: 0.5rem; } }
   .contact__label {
     display: block;
     margin-bottom: 0.25rem; }
@@ -1049,8 +1055,9 @@ form {
   border: 0;
   background-color: #aa0601;
   color: #fff;
-  width: 48%;
-  line-height: 54px; }
+  width: 50%;
+  line-height: 54px;
+  cursor: pointer; }
 
 /* 選單樣式 */
 .select {
@@ -1072,8 +1079,9 @@ form {
     font-size: 1.125rem;
     color: #495057;
     width: 30%;
-    height: 45px;
-    line-height: 45px; }
+    padding-top: 13.5px;
+    padding-bottom: 13.5px;
+    padding-left: 0.5rem; }
     @media (max-width: 992px) {
       .select__place {
         width: 35%; } }
@@ -1120,16 +1128,16 @@ form {
       max-width: 100%;
       margin-bottom: 1rem; } }
   .store__card__img {
-    padding-top: 64%;
-    background-size: cover;
+    -o-object-fit: cover;
+       object-fit: cover;
+    -o-object-position: center;
+       object-position: center;
+    height: 224px;
     border-top-right-radius: 2px;
     border-top-left-radius: 2px; }
     @media (max-width: 992px) {
       .store__card__img {
-        padding-top: 49%; } }
-    @media (max-width: 767px) {
-      .store__card__img {
-        padding-top: 48%; } }
+        height: 164px; } }
   .store__card__title {
     border-right: 1px solid #00000020;
     border-left: 1px solid #00000020;
@@ -1147,26 +1155,11 @@ form {
     .store__card__content li a {
       color: #212529; }
 
-.store__img__1 {
-  background-image: url(https://github.com/hexschool/webLayoutTraining1st/blob/master/week3/locate1.jpeg?raw=true); }
-
-.store__img__2 {
-  background-image: url(https://github.com/hexschool/webLayoutTraining1st/blob/master/week3/locate2.jpg?raw=true); }
-
-.store__img__3 {
-  background-image: url(https://github.com/hexschool/webLayoutTraining1st/blob/master/week3/locate3.jpg?raw=true); }
-
-.store__img__4 {
-  background-image: url(https://github.com/hexschool/webLayoutTraining1st/blob/master/week3/locate4.jpg?raw=true); }
-
-.store__img__5 {
-  background-image: url(https://github.com/hexschool/webLayoutTraining1st/blob/master/week3/locate5.jpg?raw=true); }
-
 .more__info__btn {
   display: block;
   width: 100%;
-  height: 67px;
-  line-height: 67px;
+  padding-top: 25px;
+  padding-bottom: 25px;
   text-align: center;
   background-color: #000;
   color: #fff; }
@@ -1275,12 +1268,15 @@ form {
   margin-bottom: 6.5rem; }
   @media (max-width: 992px) {
     .optical__content {
-      width: 47.8%;
+      width: 31.5%;
       margin-bottom: 4.5rem; } }
   @media (max-width: 767px) {
     .optical__content {
-      width: 100%;
+      width: 47.8%;
       margin-bottom: 2rem; } }
+  @media (max-width: 576px) {
+    .optical__content {
+      width: 100%; } }
 
 .sunglasses__content {
   width: 31.5%;
@@ -1353,7 +1349,7 @@ form {
     display: block;
     padding: 8px 24px; }
     .blog__catagories a:hover {
-      background-color: #AA0601;
+      background-color: #aa0601;
       border-radius: 5px;
       opacity: 1; }
 
@@ -1397,20 +1393,24 @@ form {
               flex-direction: column;
       margin-bottom: 20px; } }
 
-.blog__img {
-  max-width: 57%;
-  height: auto;
-  -o-object-fit: contain;
-     object-fit: contain; }
+.blog__link {
+  display: block;
+  max-width: 57%; }
   @media (max-width: 992px) {
-    .blog__img {
-      max-width: 48%;
-      height: auto;
-      -o-object-fit: cover;
-         object-fit: cover; } }
+    .blog__link {
+      max-width: 48%; } }
   @media (max-width: 767px) {
-    .blog__img {
+    .blog__link {
       max-width: 100%; } }
+  .blog__link img {
+    max-width: 100%;
+    height: 100%;
+    -o-object-fit: contain;
+       object-fit: contain; }
+    @media (max-width: 992px) {
+      .blog__link img {
+        -o-object-fit: cover;
+           object-fit: cover; } }
 
 .blog__content {
   max-width: 40%; }
@@ -1442,20 +1442,20 @@ form {
   @media (max-width: 992px) {
     .blog__subtitle {
       margin-bottom: 2rem; } }
-  .blog__subtitle p {
+  .blog__subtitle h4 {
     font-size: 1.25rem; }
     @media (max-width: 992px) {
-      .blog__subtitle p {
+      .blog__subtitle h4 {
         font-size: 1rem;
         line-height: 30px; } }
     @media (max-width: 767px) {
-      .blog__subtitle p {
+      .blog__subtitle h4 {
         font-size: 0.875rem; } }
-  .blog__subtitle span {
+  .blog__subtitle p {
     font-size: 1rem;
     opacity: 0.7; }
     @media (max-width: 992px) {
-      .blog__subtitle span {
+      .blog__subtitle p {
         font-size: 0.875rem;
         line-height: 30px; } }
 
